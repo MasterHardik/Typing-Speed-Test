@@ -107,6 +107,7 @@ const displayResult = () => {
     document.getElementById("accuracy").innerText = Math.round(((userInput.value.length - mistakes) / userInput.value.length) * 100) + "%";
 };
 
+
 // Start Test
 const startTest = () => {
     mistakes = 0;
@@ -117,6 +118,7 @@ const startTest = () => {
     document.getElementById("stop-test").style.display = "block";
 }
 
+
 window.onload=()=> {
     userInput.value = "";
     document.getElementById("start-test").style.display = "block";
@@ -125,3 +127,35 @@ window.onload=()=> {
     renderNewQuotes();
 }
 
+// Logic for theme
+let i = 1;
+changeColor = () => {
+    ++i;
+    i %= 6;
+    switch (i) {
+        case 0:
+            document.getElementById("color-theme").style.backgroundColor = "#00a8ff";
+            document.body.style.backgroundColor = "#00a8ff";
+            break;
+        case 1:
+            document.getElementById("color-theme").style.backgroundColor = "#2f3640";
+            document.body.style.backgroundColor = "#2f3640";
+            break;
+        case 2:
+            document.getElementById("color-theme").style.backgroundColor = "#9c88ff";
+            document.body.style.backgroundColor = "#9c88ff";
+            break;
+        case 3:
+            document.getElementById("color-theme").style.backgroundColor = "#fbc531";
+            document.body.style.backgroundColor = "#fbc531";
+            break;
+        case 4:
+                document.getElementById("color-theme").style.backgroundColor = "#f53b57";
+                document.body.style.backgroundColor = "#f53b57";
+                break;
+        case 5:
+            document.getElementById("color-theme").style.backgroundColor = "#4cd137";
+            document.body.style.backgroundColor = "#4cd137";
+            break;
+    }
+    }
